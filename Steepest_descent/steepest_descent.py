@@ -146,5 +146,6 @@ class parameter_space(object):
         plt.plot(path_x[-1], path_y[-1], c='k', marker='*')
         plt.xlabel(r'$P_0$', fontsize=12)
         plt.ylabel(r'$P_1$', fontsize=12)
+        plt.savefig('Parameter_space[4,8].png')
         plt.show()
         plt.close()
