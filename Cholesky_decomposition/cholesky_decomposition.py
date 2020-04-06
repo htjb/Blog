@@ -33,7 +33,7 @@ A_np = np.linalg.inv(L_np)
 
 Q_ = A @ Q @ A.T
 Q_np = A_np @ Q @ A_np.T
-plt.figure(figsize = (18, 5))
+plt.figure(figsize = (12, 5))
 plt.subplot(1, 2, 1)
 plt.imshow(Q_, cmap='jet')
 cbar = plt.colorbar()
@@ -44,5 +44,6 @@ plt.imshow(Q_np, cmap='jet')
 cbar = plt.colorbar()
 cbar.set_label(r'$Q\__{Cholesky: Numpy}$')
 plt.title('Cholesky: Numpy')
-#plt.savefig('Cholesky_Decomposition_x40-120.png')
+plt.subplots_adjust(wspace=0.3)
+plt.savefig('Cholesky_Decomposition_x40-120.png')
 plt.show()
