@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.linalg
 
-#x = np.linspace(40, 120, 100)
+x = np.linspace(40, 120, 100)
 
 x_ = x/x.max()
 N = 9
