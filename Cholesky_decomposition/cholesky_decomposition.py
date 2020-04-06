@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.linalg
 
-x = np.linspace(40, 120, 100)
+x = np.linspace(40, 100, 100)
 
 x_ = x/x.max()
 N = 9
@@ -45,5 +45,5 @@ cbar = plt.colorbar()
 cbar.set_label(r'$Q\__{Cholesky: Numpy}$')
 plt.title('Cholesky: Numpy')
 plt.subplots_adjust(wspace=0.3)
-plt.savefig('Cholesky_Decomposition_x40-120.png')
+plt.savefig('Cholesky_Decomposition_x40-100.png')
 plt.show()
