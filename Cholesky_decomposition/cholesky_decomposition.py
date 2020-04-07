@@ -2,9 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.linalg
 
-x = np.linspace(40, 100, 100)
-
-x_ = x/x.max()
+x = np.linspace(40, 120, 100)
+x_ = (x-x.min())/(x.max()-x.min())
 N = 9
 
 phi = np.empty([len(x), N])
@@ -13,8 +12,6 @@ for i in range(len(x)):
         phi[i, l] = x_[i]**(l)
 
 Q = phi.T @ phi
-
-print(Q)
 
 L = np.zeros(Q.shape)
 for i in range(L.shape[0]):
@@ -45,5 +42,5 @@ cbar = plt.colorbar()
 cbar.set_label(r'$Q\__{Cholesky: Numpy}$')
 plt.title('Cholesky: Numpy')
 plt.subplots_adjust(wspace=0.3)
-plt.savefig('Cholesky_Decomposition_x40-100.png')
+#plt.savefig('Cholesky_Decomposition_N=11.png')
 plt.show()
