@@ -14,21 +14,15 @@ def inverse_CDF(y, lam):
 x = np.linspace(0, 10, 100)
 lam = 0.5
 
-r_uniform, r_exp = [], []
-for i in range(3):
-    r_uniform.append(uniform(3).rand)
-    r_exp.append(inverse_CDF(r_uniform[-1], lam))
+
+r_uniform = uniform(10).rand
+r_exp = inverse_CDF(r_uniform, lam)
 
 F = CDF(x, lam)
 
-color = ['k', 'r', 'purple']
 plt.figure()
 plt.plot(x, F)
-
-for i in range(3):
-    plt.plot(r_exp[i], r_uniform[i], ls='', marker='*',
-        c=color[i], label='Set ' + str(i))
-
+plt.plot(r_exp, r_uniform, ls='', marker='*')
 plt.xlabel('x', fontsize=12)
 plt.ylabel('y', fontsize=12)
 plt.savefig('ITS_demo.png')
